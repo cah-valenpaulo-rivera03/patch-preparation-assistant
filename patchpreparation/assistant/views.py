@@ -272,6 +272,8 @@ def generate_list(change, patch_tags):
     year = cycle.split()[1]
     exempt_tag = "exempt-patch-%s-%s" % (month.lower(), year)
 
+    print(exempt_tag)
+
     for keyword in patch_tags:
         with open(source_file, "r") as csvfile:
             for line in csvfile:
@@ -289,7 +291,7 @@ def get_patch_cycle():
 
     patch_tuesday = get_patch_tuesday(month, year)
 
-    if day > patch_tuesday.day:
+    if day >= patch_tuesday.day:
         patch_cycle = month
         patch_cycle_year = year
     else:
