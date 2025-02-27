@@ -1,4 +1,5 @@
 output/*
 .venv/*
-patchpreparation/assistant/static/patchServerCollection.csv
-patchpreparation/assistant/__pycache__/*
+*.csv
+*pychache*
+*.pyc
